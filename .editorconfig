@@ -1,0 +1,28 @@
+# http://editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.go]
+indent_style = tab
+
+[*.md]
+indent_size = unset
+
+[*.json]
+insert_final_newline = false
+
+# Auto generated files
+[{*/.git/*,package-lock.json,*/bin/*,*.DS_Store,*.mod}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset

@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "allowCompoundWords": true,
+  "language": "en-GB",
+  "dictionaries": [
+    "en-GB",
+    "companies"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    ".gitignore",
+    "**/.devcontainer/**",
+    "**/.git/**",
+    "**/.husky/**",
+    "**/.vscode/**",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "package-lock.json",
+    "report",
+    "**/*.mod",
+    "**/*.sum"
+  ],
+  "ignoreWords": [],
+  "words": []
+}
