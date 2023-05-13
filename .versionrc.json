@@ -1,0 +1,43 @@
+{
+  "types": [
+    {
+      "type": "chore",
+      "hidden": true
+    },
+    {
+      "type": "ci",
+      "section": "CICD"
+    },
+    {
+      "type": "docs",
+      "section": "Documentation"
+    },
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes"
+    },
+    {
+      "type": "perf",
+      "section": "Performance"
+    },
+    {
+      "type": "refactor",
+      "section": "Refectoring"
+    },
+    {
+      "type": "style",
+      "hidden": true
+    },
+    {
+      "type": "test",
+      "section": "Tests"
+    }
+  ],
+  "releaseCommitMessageFormat": "chore(release): {{currentTag}} [skip ci]",
+  "commitUrlFormat": "https://dev.azure.com/vbl-core/IT-Operations/_git/cloud-ops-keyvault/commit/{{hash}}",
+  "compareUrlFormat": "https://dev.azure.com/vbl-core/IT-Operations/_git/cloud-ops-keyvault/branchCompare?baseVersion=GT{{previousTag}}&targetVersion=GT{{currentTag}}"
+}
