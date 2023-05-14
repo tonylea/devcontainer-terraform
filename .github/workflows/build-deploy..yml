@@ -2,7 +2,7 @@ name: Deploy Images to GHCR
 
 env:
   ARTIFACT_NAME: "image"
-  IMAGE_NAME: "${{env.IMAGE_NAME}}"
+  IMAGE_NAME: "devcontainer-terraform"
 
 on:
   push:
