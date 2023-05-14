@@ -1,5 +1,7 @@
 # Devcontainer Image: Terraform
 
+[![Deploy Images to GHCR](https://github.com/tonylea/devcontainer-terraform/actions/workflows/build-deploy..yml/badge.svg)](https://github.com/tonylea/devcontainer-terraform/actions/workflows/build-deploy..yml)
+
 This repo creates a devcontainer image for use in development of Terraform projects.
 
 ## Built in Tools
