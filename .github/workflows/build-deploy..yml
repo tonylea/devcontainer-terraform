@@ -1,0 +1,45 @@
+name: Deploy Images to GHCR
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  push_store_image:
+    # this job will only run if the PR has been merged
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./src"
+    steps:
+      - name: "Checkout GitHub Action"
+        uses: actions/checkout@main
+
+      - name: "Login to GitHub Container Registry"
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      - name: "Build Inventory Image"
+        run: |
+          docker build ./src --tag ghcr.io/tonylea/devcontainer-terraform:latest
+          docker push ghcr.io/tonylea/store:latest
+
+      - uses: actions/checkout@v2
+      - name: Configure committer
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "gitbot@fakeemail.com"
+
+      - name: "Update version"
+        run: |
+          npm install -g standard-version
+          standard-version
+          git push --follow-tags origin HEAD:main
+
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build ./src --tag ghcr.io/tonylea/devcontainer-terraform::${{github.ref_name}}
