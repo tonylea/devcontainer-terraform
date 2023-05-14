@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3
         # if: github.event.pull_request.merged == true
         with:
-          name: ${{env.ARTIFACT_NAME}}}
+          name: ${{env.ARTIFACT_NAME}}
           path: /tmp/${{env.IMAGE_NAME}}.tar
 
   deploy:
@@ -46,7 +46,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: ${{env.ARTIFACT_NAME}}}
+          name: ${{env.ARTIFACT_NAME}}
           path: /tmp
       - name: Load image
         run: |
